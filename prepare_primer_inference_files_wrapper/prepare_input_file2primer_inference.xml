@@ -1,0 +1,105 @@
+<tool id="prepare_primer_inference_input_file" name="Prepare primer input inference file" version="0.1.0">
+  <description>Prepare primer input inference file</description>
+  <requirements>
+    <!--requirement type="package" version="2.7.5">python</requirement-->
+    <requirement type="package" version="2.10.4">vsearch</requirement>
+  </requirements>
+  <command>
+    <![CDATA[  
+    python $__tool_directory__/prepare_input_file2primer_inference.py 
+
+      ## Taxon name
+      -t "${taxon_name_input}"
+
+      ## fasta file
+      -f "${fasta_file.fields.path}"
+
+      ### quality check and consensus section ###
+      -p "${csv_file.fields.path}"
+
+      ## output
+      -o "${output}"
+
+      ## Clustering (optional)
+      #if str( $enable_clustering ) == "true":
+        -c
+      #end if
+
+    ]]>
+  </command>
+  <inputs>
+
+    <param name="taxon_name_input" type="text" label="Taxon name" help="Mandatory"/>
+
+    <!-- FASTA file containing the ITS1 sequences and the flanking regions [MANDATORY] -->
+    <param name="fasta_file" type="select" hidden="true">
+      <options from_data_table="prepare_primer_inference_files">
+        <filter type="static_value" name="type" value="fasta_file" column="0"/>
+      </options>
+    </param>
+
+    <!-- CSV file containing the association between the accession number and the taxonomic path [MANDATORY] -->
+    <param name="csv_file" type="select" hidden="true">
+      <options from_data_table="prepare_primer_inference_files">
+        <filter type="static_value" name="type" value="csv_file" column="0"/>
+      </options>
+    </param>
+
+    <!-- Taxon name menu -->
+    <param name="taxon_name_input" type="select" label="input taxon name to search.">
+      <options from_data_table="itsonedb_taxon_name_list">
+        <column name="name" index="0"/>
+        <column name="value" index="0"/>
+      </options>
+    </param>
+
+    <param name="enable_clustering" type="boolean" truevalue="true" falsevalue="false" checked="True" label="Enable clustering" help="If the number of selected ITS1 sequences is more than 1000, the sequences are clusterd at 97% of identity" />
+
+  </inputs>
+
+  <outputs>
+    <data format="fasta" name="output" />
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="input" value="specie"/>
+      <output name="out_file" file="fasta" />
+    </test>
+  </tests>
+
+  <stdio>
+    <regex match="vsearch v2.10.4_linux_x86_64"
+           source="stderr"
+           level="log"
+           description="vsearch log output" />
+
+    <regex match="No output. The file is empty."
+           source="both"
+           level="fatal"
+           description="No intragenus data" />
+  </stdio> 
+
+  <help><![CDATA[
+
+**Prepare primer input inference file overview**
+
+If no output is found, an error message is displayed.
+
+**Example**
+
+Taxon name: Aspergillus flavus
+
+**Input  options**
+
+    -c <bool>
+        If the number of selected ITS1 sequences is more than 1000, the sequences are clusterd at 97% of identity (optional)
+
+  ]]></help>
+
+  <!--citations>
+    <citation type="doi">10.1186/s12859-015-0595-z</citation>
+  </citations-->
+
+</tool>
+

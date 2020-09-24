@@ -1,0 +1,2 @@
+fasta_file	fasta_file	/export/prepare_primer_inference_files/ITS1_r131_plus_flanking_region.fna.gz
+csv_file	csv_file	/export/prepare_primer_inference_files/node2tax_name_path.tsv.gz
