@@ -1,0 +1,137 @@
+<tool id="biomas_wrapper" name="BioMaS" version="0.1.0">
+  <description>- a modular pipeline for Bioinformatic analysis of Metagenomic AmpliconS</description>
+  <requirements>
+    <requirement type="package" version="2.7.5">python</requirement>
+    <requirement type="package" version="0.11.6">fastqc</requirement>
+    <requirement type="package" version="2.3.0">bowtie2</requirement>
+    <requirement type="package" version="1.9.2">numpy</requirement>
+    <requirement type="package" version="0.8.4">pysam</requirement>
+    <requirement type="package" version="1.70">biopython</requirement>
+    <requirement type="package" version="1.2.11">FLASH</requirement>
+    <requirement type="package" version="0.4.1">trim-galore</requirement>
+    <requirement type="package" version="2.3.10">ete2</requirement>
+    <requirement type="package" version="0.2.9">xvfbwrapper</requirement>
+  </requirements>
+  <command>
+    <![CDATA[  
+    python $__tool_directory__/biomas_wrapper.py 
+
+      ## First sequence file
+      -i1 "${seq_1}"
+
+      ## Second sequence file
+      -i2 "${seq_2}"
+
+      ## output prefix
+      -o biomas_output
+
+      ### quality check and consensus section ###
+      -qcc1 "${seq_1.name}"
+      -qcc2 "${seq_2.name}"
+
+      ## Fragment lenght (optional)
+      ## If zero it is ignored
+      -f "${frag_len}"
+
+      ## number of threads for Bowtie2 (FIXME currently not enabled. need to modify qcc script).
+      -p \${GALAXY_SLOTS:-4}
+
+      ### bowtie2 execution ITSoneDB section ###
+      -d "${bowtie2_indexes.fields.path}"
+      -v "${mapping_file.fields.path}"
+
+      ### perl tango execution ###
+      -D "${tango_tree.fields.path}"
+
+      ### tree builder for perl tango ###
+      -T "${visualization_file.fields.path}"
+    ]]>
+  </command>
+  <inputs>
+    <param name="seq_1" format="fastq" type="data" label="First sequence" help="First sequence input file"/>
+    <param name="seq_2" format="fastq" type="data" label="Second sequence" help="Second sequence input file"/>
+    <param name="frag_len" type="integer" value="0" label="Fragment lenght (optional)" help="Fragment lenght (optional)"/>
+
+    <param name="bowtie2_indexes" type="select" label="Bowtie 2 indexes" help="If your genome of interest is not listed, contact the Galaxy team" >
+      <options from_data_table="biomas_bowtie2_indexes" >
+        <validator type="no_options" message="No indexes are available for the selected input dataset" />
+      </options>
+    </param>
+
+    <param name="mapping_file" type="select" hidden="true">
+      <options from_data_table="biomas_mapping_files">
+        <filter type="static_value" name="type" value="seq2node" column="0"/>
+      </options>
+    </param>
+
+    <param name="tango_tree" type="select" hidden="true">
+      <options from_data_table="biomas_tango_indexes"/>
+    </param>
+
+    <param name="visualization_file" type="select" hidden="true">
+      <options from_data_table="biomas_mapping_files">
+        <filter type="static_value" name="type" value="visualization" column="0"/>
+      </options>
+    </param>
+
+  </inputs>
+
+  <outputs>
+    <data format="txt" name="report" />
+    <collection name="qcc_output" type="list" label="BioMaS pipeline on ${on_string}" >
+      <data format="fastq" name="biomas_output_dereplicated_consensus.fastq" from_work_dir="biomas_output_dereplicated_consensus.fastq" />
+      <data format="fastq" name="biomas_output.notCombined_1_val_1.fq" from_work_dir="biomas_output.notCombined_1_val_1.fq" />
+      <data format="fastq" name="biomas_output.notCombined_2_val_2.fq" from_work_dir="biomas_output.notCombined_2_val_2.fq" />
+      <data format="tsv" name="biomas_output_taxonomic_classification.tsv" from_work_dir="biomas_output_taxonomic_classification.tsv" />
+      <data format="csv" name="biomas_output_taxonomic_summary.csv" from_work_dir="biomas_output_taxonomic_summary.csv" />
+      <data format="svg" name="biomas_output_tree.svg" from_work_dir="biomas_output_tree.svg" />
+    </collection>
+    <collection name="fastqc_output" type="list" label="FastQC on ${on_string}" >
+      <discover_datasets pattern="(?P&lt;designation&gt;.+)\.html" format="html" directory="fastqc_computation" />
+    </collection>
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="input" value="fq.gz"/>
+      <output name="out_file" file="fastq" />
+    </test>
+  </tests>
+
+  <!--stdio>
+    <regex match="No input data usefull for tango computation"
+           source="both"
+           level="log"
+           description="No input data usefull for tango computation" />
+  </stdio--> 
+
+  <help><![CDATA[
+**BioMaS overview**
+
+BioMaS_ (Bioinformatic analysis of Metagenomic AmpliconS) is a new bioinformatic pipeline designed to support biomolecular researchers involved in taxonomic studies of environmental microbial communities by a completely automated workflow, comprehensive of all the fundamental steps, from raw sequence data upload and cleaning to final taxonomic identification, that are absolutely required in an appropriately designed Meta-barcoding HTS-based experiment.
+
+.. _BioMaS: https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-015-0595-z
+
+-----
+
+**Inputs**
+
+BioMaS accepts files in FASTQ format...
+
+-----
+
+**Input  options**
+
+Quality check and consensus options::
+
+    -f <int>
+        fragment lenght (optional)
+
+  ]]></help>
+
+  <citations>
+    <citation type="doi">10.1186/s12859-015-0595-z</citation>
+  </citations>
+
+</tool>
+
