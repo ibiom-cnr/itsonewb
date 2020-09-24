@@ -1,7 +1,7 @@
 ITSoneWB
 ========
 
-![itsonewb_home](https://gitlab.com/mtangaro/itsonewb/-/raw/master/docs/images/itsonewb_home.png)
+![itsonewb_home](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonewb_home.png)
 
 
 
