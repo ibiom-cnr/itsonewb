@@ -9,16 +9,16 @@ Galaxy usage
 To run the tool using ITSoneWB wrapper:
 
 1. Select the taxon name in the tool menu:
-![prepare_primer_input_view](https://gitlab.com/mtangaro/itsonewb/-/raw/master/docs/images/prepare_primer_inference_files_wrapper/prepare_input_1.png)
+![prepare_primer_input_view](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/prepare_primer_inference_files_wrapper/prepare_input_1.png)
 
 2. Submit your request:
-![prepare_primer_input_submit](https://gitlab.com/mtangaro/itsonewb/-/raw/master/docs/images/prepare_primer_inference_files_wrapper/prepare_input_2.png)
+![prepare_primer_input_submit](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/prepare_primer_inference_files_wrapper/prepare_input_2.png)
 
 3. The output can be esily reproduced from the history or downloaded.
-![prepare_primer_input_results](https://gitlab.com/mtangaro/itsonewb/-/raw/master/docs/images/prepare_primer_inference_files_wrapper/prepare_input_3.png)
+![prepare_primer_input_results](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/prepare_primer_inference_files_wrapper/prepare_input_3.png)
 
 4. If no output is crated, an error will be displayed:
-![prepare_primer_input_error](https://gitlab.com/mtangaro/itsonewb/-/raw/master/docs/images/prepare_primer_inference_files_wrapper/prepare_input_error.png)
+![prepare_primer_input_error](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/prepare_primer_inference_files_wrapper/prepare_input_error.png)
 
 Command line usage
 ------------------
