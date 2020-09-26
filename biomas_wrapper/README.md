@@ -43,6 +43,7 @@ The biomas output is made by:
 
 - the SVG Tree (you have to download it to display).
 
+![biomas_output_fastqc](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_tree.png)
 
 Testing BioMaS Galaxy
 ---------------------
