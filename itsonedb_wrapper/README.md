@@ -5,17 +5,17 @@ ITSoneDB connector
 
 This tool allow to query ITSoneDB from Galaxy and import the results in the History.
 
-![itsonedb_connector_home](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector_home.png
+![itsonedb_connector_home](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector/itsonedb_connector_home.png
 
 Usage
 -----
 
 The tool allows to query ITSoneDB by ``specie name``, ``taxon name`` and ``accession number```:
 
-![itsonedb_connector_select](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector_select.png
+![itsonedb_connector_select](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector/itsonedb_connector_select.png
 
 The ITSoneDB connector provides the output sequences aand the metadata file:
 
-![itsonedb_connector_output](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector_output.png
-![itsonedb_connector_metadata](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector_output_metadata.png
+![itsonedb_connector_output](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector/itsonedb_connector_output.png
+![itsonedb_connector_metadata](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector/itsonedb_connector_output_metadata.png
 
