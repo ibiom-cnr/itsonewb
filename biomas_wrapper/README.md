@@ -20,7 +20,7 @@ BioMaS Galaxy usage
 
 The output ov BioMaS tools is composed by two output collection: the fastqc output and the BioMaS pipeline output
 
-<img src="https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_1.png" width="500" height="500"/>
+<img src="https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_1.png" width="300"/>
 ![biomas_output_1](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_2.png)
 ![biomas_output_1](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_3.png)
 
