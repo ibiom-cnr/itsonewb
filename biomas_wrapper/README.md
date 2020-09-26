@@ -25,7 +25,7 @@ The output ov BioMaS tools is composed by two output collection: the fastqc outp
 <img src="https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_3.png" width="300"/>
 
 by clicking on the "eye" icon is possible to preview the results, while expanding each entry is possible to download the results.
-![biomas_output_1](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_4.png)
+<img src="https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_4.png" width="300"/>
 
 The fastqc output can be easily shown in galaxy:
 
