@@ -14,7 +14,7 @@ BioMaS Galaxy usage
 
 2. Submit your job:
 
-![data input selection](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_galaxy_2.png)
+![data input job_submission](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_galaxy_2.png)
 
 3. BioMaS Output
 
@@ -29,7 +29,7 @@ by clicking on the "eye" icon is possible to preview the results, while expandin
 
 The fastqc output can be easily shown in galaxy:
 
-![biomas_output_1](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_fastqc.png)
+![biomas_output_fastqc](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_fastqc.png)
 
 The biomas output is made by:
 
@@ -47,8 +47,9 @@ The biomas output is made by:
 Testing BioMaS Galaxy
 ---------------------
 
+For testing purpose, we uploaded test input for BioMaS, in Galaxy shared library. These can be exported to Galaxy history and used also by anonymous users.
 
-
+![biomas_output_example](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/biomas/biomas_output_example_data.png)
 
 Requirements
 ------------
