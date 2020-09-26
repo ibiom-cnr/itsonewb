@@ -1,0 +1,13 @@
+<!-- Use the file tool_data_table_conf.xml.oldlocstyle if you don't want to update your loc files as changed in revision 4550:535d276c92bc-->
+<table name="itsonedb_accession_list" comment_char="#">
+    <columns>value</columns>
+    <file path="tool-data/accessions_r138.loc" />
+</table>
+<table name="itsonedb_taxon_name_list" comment_char="#">
+    <columns>value</columns>
+    <file path="tool-data/taxon_names_r138.loc" />
+</table>
+<table name="itsonedb_specie_list" comment_char="#">
+    <columns>value</columns>
+    <file path="tool-data/species_r138.loc" />
+</table>
