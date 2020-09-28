@@ -1,0 +1,108 @@
+<tool id="barcoding_gap_wrapper" name="Barcoding Gap Inference" version="0.2.0">
+  <!--description>placeholder</description-->
+  <requirements>
+    <requirement type="package" version="2.7">python</requirement>
+    <requirement type="package" version="1.15.4">numpy</requirement>
+    <requirement type="package" version="2.2.3">matplotlib</requirement>
+    <requirement type="package" version="0.24.1">pandas</requirement>
+    <requirement type="package" version="0.4.0">plotnine</requirement>
+  </requirements>
+  <command>
+    <![CDATA[
+
+    python $__tool_directory__/barcoding_gap_wrapper.py
+
+    ## family split directory
+    -d "$family_split_path.fields.path"
+
+    ## taxa file list
+    -f "$taxon_file.fields.path"
+
+    ## taxon list
+    -n "$taxon_list.fields.value"
+
+    ## taxon rank
+    -r "$input_type_selector"
+
+    -o $outpng
+
+    ]]>
+  </command>
+
+  <inputs>
+
+    <param name="family_split_path" type="select" hidden="true">
+      <options from_data_table="barcoding_gap_files" >
+        <filter type="static_value" name="type" value="family_split_path" column="0"/>
+      </options>
+    </param>
+
+    <param name="taxon_file" type="select" hidden="true">
+      <options from_data_table="barcoding_gap_files" >
+        <filter type="static_value" name="type" value="taxon_file_path" column="0"/>
+      </options>
+    </param>
+
+    <param name="taxon_list" type="select" label="Taxon list">
+      <options from_data_table="barcoding_gap_taxon_list_file" />
+    </param>
+
+    <param name="input_type_selector" type="select" label="Taxon rank">
+        <option value="genus">genus</option>
+        <option value="species">species</option>
+    </param>
+
+  </inputs>
+
+  <outputs>
+    <data format="png" name="outpng" />
+  </outputs>
+
+  <stdio>
+    <regex match="No intraspecies data"
+           source="both"
+           level="fatal"
+           description="No intraspecies data" />
+
+    <regex match="No intragenus data"
+           source="both"
+           level="fatal"
+           description="No intragenus data" />
+
+    <regex match="No extraspecies data"
+           source="both"
+           level="fatal"
+           description="No intragenus data" />
+
+    <regex match="No extragenus data"
+           source="both"
+           level="fatal"
+           description="No intragenus data" />
+  </stdio>
+
+  <tests>
+    <test>
+      <param name="input" value="name"/>
+      <output name="output" value="text" />
+    </test>
+  </tests>
+
+  <help><![CDATA[
+**Barcoding Gap Inference overview**
+
+If no extra(infra) genus(species) data is found, an error message is displayed.
+
+**Example**
+
+Taxon list: Aspergillus flavus
+
+Taxon rank: genus
+
+**Documentation**
+
+[URL TO DOCUMENTATION]
+
+  ]]></help>
+
+
+</tool>

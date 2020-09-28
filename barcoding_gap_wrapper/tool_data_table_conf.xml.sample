@@ -1,0 +1,9 @@
+<!-- Location of distance files for barcoding gap -->
+<table name="barcoding_gap_files" comment_char="#">
+    <columns>value, path</columns>
+    <file path="tool-data/barcoding_gap_files.loc" />
+</table>
+<table name="barcoding_gap_taxon_list_file" comment_char="#">
+    <columns>value, rank, specie</columns>
+    <file path="/export/barcoding_gap/data_01022019/all_taxon_list_and_families.csv" />
+</table>
