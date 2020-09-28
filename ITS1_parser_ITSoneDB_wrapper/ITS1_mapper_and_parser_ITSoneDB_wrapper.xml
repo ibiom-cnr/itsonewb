@@ -1,0 +1,127 @@
+<tool id="ITS1_mapper_and_parser_ITSoneDB_wrapper" name="ITS1 to ITSoneDB" version="0.1.0">
+  <description>Map and parse metagenomic data to ITSoneDB</description>
+  <requirements>
+    <requirement type="package" version="2.7">python</requirement>
+    <requirement type="package" version="2.3.4.3">bowtie2</requirement>
+    <requirement type="package" version="1.9.4">argcomplete</requirement>
+    <requirement type="package" version="1.15.4">numpy</requirement>
+    <requirement type="package" version="0.6">pysam</requirement>
+  </requirements>
+  <command>
+    <![CDATA[  
+  
+      python $__tool_directory__/ITS1_mapper_and_parser.py 
+
+      ############################
+      ## Single file
+
+      #if $library.type == "single":
+
+        -s "$library.single_input"
+
+      ############################
+      ## Paired file
+
+      #elif $library.type == "paired"
+
+        -p1 "$library.paired_1_input"
+
+        -p2 "$library.paired_2_input"
+
+      ############################
+      ## Paired collection
+
+      #elif $library.type == "paired_collection":
+
+        -p1
+        #for $key in $library.paired_input.keys()
+          $library.paired_input[$key]['forward']
+        #end for
+
+        -p2
+        #for $key in $library.paired_input.keys()
+          $library.paired_input[$key]['reverse']
+        #end for
+
+      #end if
+
+      ## fasta file
+      -f "${fasta_file.fields.path}"
+
+      ## bowtie2 execution ITSoneDB section
+      -b "${bowtie2_indexes.fields.path}"
+
+      -i "$identity_percentage"
+      -c "$coverage"
+      -t "\${GALAXY_SLOTS:-4}"
+      -n "$match_number"
+
+    ]]>
+  </command>
+  <inputs>
+
+    <!-- single/paired -->
+     <conditional name="library">
+       <param name="type" type="select" label="Single or Paired, file or collection">
+         <option value="single">Single file</option>
+         <option value="paired">Paired files</option>
+         <option value="paired_collection">Paired Dataset Collection</option>
+       </param>
+
+       <when value="single">
+         <param name="single_input" type="data" label="Single input file."/>
+       </when>
+
+       <when value="paired">
+         <param name="paired_1_input" type="data" label="Forward dataset file."/>
+         <param name="paired_2_input" type="data" label="Reverse dataset file."/>
+       </when>
+
+       <when value="paired_collection">
+         <param name="paired_input" type="data_collection" collection_type="list:paired" label="Paired collection" />
+       </when>
+
+      </conditional>
+
+    <param name="fasta_file" type="select" hidden="true">
+      <options from_data_table="ITS1_mapper_and_parser_ITSoneDB">
+        <filter type="static_value" name="type" value="fasta_file" column="0"/>
+      </options>
+    </param>
+
+    <param name="bowtie2_indexes" type="select" label="Bowtie 2 indexes" help="If your genome of interest is not listed, contact the Galaxy team" >
+      <options from_data_table="biomas_bowtie2_indexes" >
+        <validator type="no_options" message="No indexes are available for the selected input dataset" />
+      </options>
+    </param>
+
+    <param name="identity_percentage" type="float" value="0.97" label="Identity percentage threshold" help="A floating number from 0 to 1 (default is 0.97)."/>
+    <param name="coverage" type="float" value="0.7" label="Coverage of the query sequence" help="A floating number from 0 to 1 (default is 0.7)"/>
+    <param name="match_number" type="integer" value="50" label="Number of bowtie2 matches." help="(default is 50)"/>
+
+  </inputs>
+
+  <outputs>
+    <data format="tsv" name="mapping_file.tsv" from_work_dir="mapping_file.tsv" />
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="input" value="specie"/>
+      <output name="out_file" file="fasta" />
+    </test>
+  </tests>
+
+  <!--help><![CDATA[
+**Input  options**
+
+    -c <bool>
+        If the number of selected ITS1 sequences is more than 1000, the sequences are clusterd at 97% of identity (optional)
+
+  ]]></help-->
+
+  <!--citations>
+           <citation type="doi">10.1186/s12859-015-0595-z</citation>
+  </citations-->
+
+</tool>

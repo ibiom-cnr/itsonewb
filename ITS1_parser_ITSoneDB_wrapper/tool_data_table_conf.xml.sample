@@ -1,0 +1,6 @@
+<!-- Use the file tool_data_table_conf.xml.oldlocstyle if you don't want to update your loc files as changed in revision 4550:535d276c92bc-->
+<!-- Location of base file for ITS1 mapper and parser for ITSoneDB -->
+<table name="ITS1_mapper_and_parser_ITSoneDB" comment_char="#">
+     <columns>value, name, path</columns>
+     <file path="tool-data/ITS1_mapper_and_parser_ITSoneDB_fasta.loc" />
+</table>
