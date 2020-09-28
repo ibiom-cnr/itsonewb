@@ -33,6 +33,8 @@ The tool provides four outputs:
 Reference primer pair
 ---------------------
 
+The reference primer pair can be loaded by the Galaxy History or the user can use the built in pair.
+
 The reference primer pair is:
 
 ```
