@@ -12,9 +12,22 @@ Usage
 
 Mopo16s input data can be created using the ITSoneWB tools [Prepare primer input inference file](https://github.com/ibiom-cnr/itsonewb/tree/master/prepare_primer_inference_files_wrapper#prepare-primer-input-inference).
 
+The tool provides four outputs:
+
+1. init primers:
+
 ![Mopo16s_output_1](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/mopo16s/mopo16s_output_1.png)
+
+2. init scores:
+
 ![Mopo16s_output_2](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/mopo16s/mopo16s_output_2.png)
+
+3. output primers:
+
 ![Mopo16s_output_3](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/mopo16s/mopo16s_output_3.png)
+
+4. output scores:
+
 ![Mopo16s_output_4](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/mopo16s/mopo16s_output_4.png)
 
 Reference primer pair
@@ -38,7 +51,7 @@ All Mopo16s options are parsed by our Galaxy wrapper and hidden under the ``adva
 ![Mopo16s_advanced_options_1](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/mopo16s/mopo16s_advanced_options_1.png)
 ![Mopo16s_advanced_options_2](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/mopo16s/mopo16s_advanced_options_2.png)
 
-All Mopo16s option are listed and explained [here](https://www.dei.unipd.it/~baruzzog/mopo16S.html#Usag). Moreover each option help is reported within the tool.
+All Mopo16s option are listed and explained [here](https://www.dei.unipd.it/~baruzzog/mopo16S.html#Usag). Moreover each option help is reported in the tool in-line help.
 
 References
 ----------
