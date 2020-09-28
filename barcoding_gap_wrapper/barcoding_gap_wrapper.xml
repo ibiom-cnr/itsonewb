@@ -100,7 +100,9 @@ Taxon rank: genus
 
 **Documentation**
 
-[URL TO DOCUMENTATION]
+Tool documentation is here_
+
+.. _here: https://github.com/ibiom-cnr/itsonewb/tree/master/barcoding_gap_wrapper#barcoding-gap-inference
 
   ]]></help>
 
