@@ -3,7 +3,7 @@ Mopo16s Galaxy wrapper
 
 The [Mopo16s](https://www.dei.unipd.it/~baruzzog/mopo16S.html) software tool is a computational method for optimizing the choice of primer sets, based on multi-objective optimization, which simultaneously: 1) maximizes efficiency and specificity of target amplification; 2) maximizes the number of different bacterial 16S sequences matched by at least one primer; 3) minimizes the differences in the number of primers matching each bacterial 16S sequence. The algorithm can be applied to any desired amplicon length without affecting computational performance.
 
-[Mopo16s wrapper](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/mopo16s/mopo16s_home.png)
+![Mopo16s wrapper](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/mopo16s/mopo16s_home.png)
 
 This repository hosts only information on Mopo16s Galaxy wrapper. More information on Mopo16s can be found [here](https://www.dei.unipd.it/~baruzzog/mopo16S.html).
 
