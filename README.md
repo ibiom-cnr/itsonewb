@@ -8,5 +8,6 @@ ITSoneWB
 # Table of Contents <a name="toc" />
 - [ITSoneDB_connector](https://github.com/ibiom-cnr/itsonewb/tree/master/itsonedb_wrapper#itsonedb-connector)
 - [BioMaS](https://github.com/ibiom-cnr/itsonewb/tree/master/biomas_wrapper#biomas-galaxy)
+- [Barcoding Gap Inference](https://github.com/ibiom-cnr/itsonewb/tree/master/barcoding_gap_wrapper#barcoding-gap-inference)
 - [Prepare primer input inference](https://github.com/ibiom-cnr/itsonewb/tree/master/prepare_primer_inference_files_wrapper#prepare-primer-input-inference)
 - [Mopo16s](https://github.com/ibiom-cnr/itsonewb/tree/master/mopo16s_wrapper#mopo16s-galaxy-wrapper)
