@@ -1,0 +1,160 @@
+<tool id="mopo16s" name="mopo16s" version="0.1.0">
+  <description>Optimizing PCR primers targeting the bacterial 16S ribosomal RNA gene</description>
+  <requirements>
+    <requirement type="package" version="1.16.2">numpy</requirement>
+    <requirement type="package" version="0.24.1">pandas</requirement>
+  </requirements>
+  <command>
+    <![CDATA[  
+    python $__tool_directory__/mopo16s_wrapper.py 
+
+      --reference "${reference_set_file}"
+
+      #if str($initial_primer_pairs_file) == "history":
+        --input "${initial_primer_pairs_file.own_file}"
+      #else:
+        --input "${initial_primer_pairs_file.index.fields.path}" 
+      #end if
+
+      --init-primers "${init_primers}"
+      --init-scores "${init_scores}"
+      --out-primers  "${out_primers}"
+      --out-scores  "${out_scores}"
+
+      -G "\${GALAXY_SLOTS:-4}"
+
+      #if str($advanced.advanced_parameters) =="show":
+
+        -s "${advanced.seed}"
+        -r "${advanced.n_restarts}"
+        -R "${advanced.n_runs}"
+        -V "${advanced.verbosity_level}"
+
+        -M "${advanced.max_mismatches}"
+        -S "${advanced.max_ALenSpanC}"
+
+        -l "${advanced.min_primer_len}"
+        -L "${advanced.max_primer_len}"
+        -m "${advanced.min_tm}"
+        -c "${advanced.min_gcc_content}"
+        -C "${advanced.max_gcc_content}"
+        -D "${advanced.max_dimers}"
+        -p "${advanced.max_homopolymer_len}"
+        -d "${advanced.max_delta_tm}"
+        -e "${advanced.max_ALenSpanE}"
+        -q "${advanced.max_ALenSpanEQ}"
+
+        -t "${advanced.min_TmInterv}"
+        -g "${advanced.min_GCContInt}"
+        -i "${advanced.max_DimersInt}"
+        -T "${advanced.delta_TmInt}"
+        -P "${advanced.max_HLenInt}"
+        -E "${advanced.max_ALenSpanEI}"
+      #end if
+    ]]>
+  </command>
+  <inputs>
+    <param name="reference_set_file" type="data" format="fasta" label="Reference dataset file" help="Reference set file is a .fasta file containing the reference set of sequences for which the primer are designed."/>
+
+    <!--param name="initial_primer_pairs_file" type="data" format="fasta" label="Initial primer pairs file" help="Initial primer pairs file is a .fasta file containing a set of (possibly degenerate) primer pairs from which to start the optimisation, saved alterning forward and corresponding reverse primers."/-->
+    <conditional name="initial_primer_pairs_file">
+        <param name="source" type="select" label="Reference dataset file. Select between built-in reference pair or upload yours." help="Initial primer pairs file is a .fasta file containing a set of (possibly degenerate) primer pairs from which to start the optimisation, saved alterning forward and corresponding reverse primers.">
+            <option value="indexed">Use a built-in initial primer pair</option>
+            <option value="history">Use an initial primer pairs from the history</option>
+        </param>
+        <when value="indexed">
+            <param name="index" type="select" label="Initial primer pair" help="If your genome of interest is not listed, contact the Galaxy team">
+                <options from_data_table="mopo16s_initial_primer_pairs_file">
+                    <filter type="static_value" name="type" value="pairs_file" column="0"/>
+                </options>
+            </param>
+        </when>
+        <when value="history">
+            <param name="own_file" type="data" format="fasta" label="Select initial primer pair file" />
+        </when>
+    </conditional>
+
+    <conditional name="advanced">
+        <param name="advanced_parameters" type="select" label="advanced_parameters">
+            <option value="hide" selected="true">Hide</option>
+            <option value="show">Show</option>
+        </param>
+        <when value="hide"/>
+        <when value="show">
+
+            <param name="seed" type="integer" value="0" label="Seed" help="Seed of the random number generator."/>
+            <param name="n_restarts" type="integer" value="20" label="Number of restarts" help="Number of restarts for each run of the multi-objective optimisation algorithm."/>
+            <param name="n_runs" type="integer" value="20" label="Number of runs" help="Number of runs of the multi-objective optimisation algorithm."/>
+            <param name="verbosity_level" type="integer" value="0" label="Verbosity" help="Verbosity level (default 0). If 0, no extra output would be created. If not 0, for each run would be created 3 files: 1) primers scores file 2) primers sequences file 3) optimization steps performed at each restart"/>
+
+            <param name="max_mismatches" type="integer" value="2" label="Max mismatches number" help="Maximum number of mismatches between the non-3-end of the primer and a 16S sequence to consider the latter covered by the primer, in case also the 3-end perfectly matches."/>
+            <param name="max_ALenSpanC" type="integer" value="200" label="Max amplicon length" help="Maximum amplicon length span considered when computing coverage (half above, half below median)."/>
+
+            <param name="min_primer_len" type="integer" value="17" label="Minimum primer length" help="Minimum primer length."/>
+            <param name="max_primer_len" type="integer" value="21" label="Maximum primer length" help="Maximum primer length."/>
+            <param name="min_tm" type="integer" value="52" label="Minimum primer melting temperature" help="Minimum primer melting temperature."/>
+            <param name="min_gcc_content" type="float" value="0.5" label="Minimum primer GC content" help="Minimum primer GC content."/>
+            <param name="max_gcc_content" type="float" value="0.7" label="Maximum primer GC content" help="Maximum primer GC content."/>
+            <param name="max_dimers" type="integer" value="8" label="Maximum number of self-dimers" help="Maximum number of self-dimers, i.e. of dimers between all possible gap-less alignments of the primer with its reverse complement."/>
+            <param name="max_homopolymer_len" type="integer" value="4" label="Maximum homopolymer length" help="Maximum homopolymer length."/>
+            <param name="max_delta_tm" type="integer" value="3" label="Maximum span of melting temparatures" help="Maximum span of melting temparatures for the primer sets."/>
+            <param name="max_ALenSpanE" type="integer" value="50" label="Maximum span between median and quantile of amplicon length (maxALenSpanE)" help="Maximum span (maxALenSpanE) between median and given quantile (maxALenSpanEQ) of amplicon length."/>
+            <param name="max_ALenSpanEQ" type="float" value="0.01" label="Quantile of amplicon length (maxALenSpanEQ)" help="Maximum span (maxALenSpanE) between median and given quantile (maxALenSpanEQ) of amplicon length."/>
+
+            <param name="min_TmInterv" type="integer" value="2" label="Fuzzy tolerance interval for minimum melting temperature" help="Fuzzy tolerance interval for minimum melting temperature."/>
+            <param name="min_GCContInt" type="float" value="0.1" label="Fuzzy tolerance interval for minimum GC content" help="Fuzzy tolerance interval for minimum GC content."/>
+            <param name="max_DimersInt" type="integer" value="3" label="Fuzzy tolerance interval for maximum number of self dimers" help="Fuzzy tolerance interval for maximum number of self dimers."/>
+            <param name="delta_TmInt" type="integer" value="2" label="Fuzzy tolerance interval for span of melting temperatures of the primer set" help="Fuzzy tolerance interval for span of melting temperatures of the primer set."/>
+            <param name="max_HLenInt" type="integer" value="2" label="Fuzzy tolerance interval for maximum homopolymer length" help="Fuzzy tolerance interval for maximum homopolymer length."/>
+            <param name="max_ALenSpanEI" type="integer" value="50" label="Fuzzy tolerance interval for maximum span between median and given quantile amplicon length" help="Fuzzy tolerance interval for maximum span between median and given quantile amplicon length."/>
+
+        </when>
+    </conditional>
+
+
+  </inputs>
+
+  <outputs>
+    <data format="fasta" name="init_primers" label="${tool.name} on ${on_string}: Init primers"/>
+    <data format="fasta" name="init_scores" label="${tool.name} on ${on_string}: Init scores"/>
+    <data format="fasta" name="out_primers" label="${tool.name} on ${on_string}: Output primers"/>
+    <data format="fasta" name="out_scores" label="${tool.name} on ${on_string}: Output scores"/>
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="input" value="fq.gz"/>
+      <output name="out_file" file="fastq" />
+    </test>
+  </tests>
+
+  <!--stdio>
+    <regex match="No input data usefull for tango computation"
+           source="both"
+           level="log"
+           description="No input data usefull for tango computation" />
+  </stdio--> 
+
+  <help><![CDATA[
+**Mopo16s overview**
+
+The Mopo16s software tool is a computational method for optimizing the choice of primer sets, based on multi-objective optimization, which simultaneously: 1) maximizes efficiency and specificity of target amplification; 2) maximizes the number of different bacterial 16S sequences matched by at least one primer; 3) minimizes the differences in the number of primers matching each bacterial 16S sequence. The algorithm can be applied to any desired amplicon length without affecting computational performance.
+
+**Reference primer pair**
+
+  >forward
+
+  GAACCWGCGGARGGATCA
+
+  >reverse
+
+  GCTGCGTTCTTCATCGATGC
+
+  ]]></help>
+
+  <citations>
+    <citation type="doi">10.1186/s12859-018-2360-6</citation>
+  </citations>
+
+</tool>
+
