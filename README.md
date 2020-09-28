@@ -9,3 +9,4 @@ ITSoneWB
 - [ITSoneDB_connector](https://github.com/ibiom-cnr/itsonewb/tree/master/itsonedb_wrapper#itsonedb-connector)
 - [BioMaS](https://github.com/ibiom-cnr/itsonewb/tree/master/biomas_wrapper#biomas-galaxy)
 - [Prepare primer input inference](https://github.com/ibiom-cnr/itsonewb/tree/master/prepare_primer_inference_files_wrapper#prepare-primer-input-inference)
+- [Mopo16s](https://github.com/ibiom-cnr/itsonewb/tree/master/mopo16s_wrapper#mopo16s-galaxy-wrapper)
