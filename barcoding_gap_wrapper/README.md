@@ -10,4 +10,4 @@ The tool allows to select between genus and species.
 A ``png`` file is produced as output.
 ![barcoding_gap_output](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/barcoding_gap_inference/barcoding_gap_output.png)
 
-[back to home](https://github.com/ibiom-cnr/itsonewb/raw/master/README.md)
+[back to home](https://github.com/ibiom-cnr/itsonewb/tree/master/README.md)
