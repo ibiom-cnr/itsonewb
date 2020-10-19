@@ -14,8 +14,9 @@ The tool allows to query ITSoneDB by ``specie name``, ``taxon name`` and ``acces
 
 ![itsonedb_connector_select](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector/itsonedb_connector_select.png)
 
-The ITSoneDB connector provides the output sequences aand the metadata file:
+The ITSoneDB connector provides the output sequences and the metadata file:
 
 ![itsonedb_connector_output](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector/itsonedb_connector_output.png)
 ![itsonedb_connector_metadata](https://github.com/ibiom-cnr/itsonewb/raw/master/docs/images/itsonedb_connector/itsonedb_connector_output_metadata.png)
 
+[back to home](https://github.com/ibiom-cnr/itsonewb/tree/master/README.md)
