@@ -59,3 +59,5 @@ References
 ----------
 
 Sambo et al., BMC Bioinformatics, 2018, 19.1: 343. [https://doi.org/10.1186/s12859-018-2360-6](https://doi.org/10.1186/s12859-018-2360-6)
+
+[back to home](https://github.com/ibiom-cnr/itsonewb/tree/master/README.md)

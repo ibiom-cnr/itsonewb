@@ -28,3 +28,4 @@ To run the tool using the `prepare_input_file2primer_inference.py` script:
 ```
 python prepare_input_file2primer_inference.py -t Aspergillus -f ITS1_r131_plus_flanking_region.fna.gz -p node2tax_name_path.tsv.gz -o output.fa
 ```
+[back to home](https://github.com/ibiom-cnr/itsonewb/tree/master/README.md)
