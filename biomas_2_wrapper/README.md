@@ -15,5 +15,5 @@ On Ubuntu:
 # apt-get install libxrender1 libsm6 libxt6
 ```
 
-This version expolit Cython. For Installation detail please read the INSTALL.md file.
+This version expolits Cython. For Installation detail please read the INSTALL.md file.
 
