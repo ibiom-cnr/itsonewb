@@ -1,4 +1,4 @@
-<tool id="biomas2_wrapper" name="BioMaS2" version="0.2.0">
+<tool id="biomas_2_wrapper" name="BioMaS" version="0.2.0">
   <description>- a modular pipeline for Bioinformatic analysis of Metagenomic AmpliconS</description>
   <requirements>
     <requirement type="package" version="2.7">python</requirement>
