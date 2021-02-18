@@ -1,0 +1,4 @@
+mapping_file	Mapping file (ITSoneDB r138)	/export/BRUNO_JUNE2020/bowtie2_indexes_rel138/ITSoneDB_rel138.json.gz
+tango_dmp	Tango DMP (ITSoneDB r138)	/export/BRUNO_JUNE2020/bowtie2_indexes_rel138/ITSoneDB_1.138
+tango_folder	Tango folder	/home/galaxy/New_TANGO_perl_version/
+node_file	Node File (ITSoneDB r131)	/export/BRUNO_JUNE2020/bowtie2_indexes_rel138/visualization_ITSoneDB_r131.dmp
