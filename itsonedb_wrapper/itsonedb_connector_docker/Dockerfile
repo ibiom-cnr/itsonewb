@@ -1,4 +1,4 @@
-# TSoneWB Connector
+# ITSoneWB Connector
 
 FROM continuumio/miniconda3
 
