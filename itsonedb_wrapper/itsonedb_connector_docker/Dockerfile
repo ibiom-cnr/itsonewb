@@ -1,4 +1,4 @@
-# Galaxy - ITSoneWB
+# TSoneWB Connector
 
 FROM continuumio/miniconda3
 
@@ -15,5 +15,5 @@ RUN chmod +x /usr/local/bin/itsonedb-connector
 RUN echo "source activate itsonewb" > ~/.bashrc
 ENV PATH /opt/conda/envs/itsonewb/bin:$PATH
 
-RUN mkdir -p /itsonedb_connector
-WORKDIR /itsonedb_connector
+RUN mkdir -p /data
+WORKDIR /data
