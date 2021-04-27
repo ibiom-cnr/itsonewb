@@ -1,74 +1,35 @@
 Introduction
 ============
 
-The amplicon-based metagenomic analysis (i.e. DNA metabarcoding),
-represents a powerful tool to rapidly, efficiently and cheaply
-investigate large microbial communities. The growing interest in its
-application results in a concomitant increase of appropriate resources
-designed to manage and analyze data in FAIR-compliant way (Wilkinson et
-al., 2019).
+The amplicon-based metagenomic analysis (i.e. DNA metabarcoding), represents a powerful tool to rapidly, efficiently and cheaply investigate large microbial communities. The growing interest in its application results in a concomitant increase of appropriate resources designed to manage and analyze data in FAIR-compliant way (Wilkinson et al., 2019).
 
-In this context, ITSoneWB (ITSone WorkBench) represents a well-defined
-environment collecting and integrating the high quality ITS1 reference
-collection in ITSoneDB (Santamaria et al., 2017) with DNA metabarcoding
-well-established analysis pipelines and new tools in an easy-to-use
-service addressing the eukaryotic domain of life. Specifically, BioMaS,
-QIIME (Caporaso *et al.*, 2010), QIIME2 (Bolyen *et al.*, 2019) Mothur
-(Schloss *et al.*, 2009) pipelines were included and new tools to infer
-the ITS1 *Barcoding gap and PCR primers pair* in a user defined
-taxonomic range and to identify ITS1 regions in shotgun metagenomic data
-were designed, developed and deployed in a Galaxy environment.
+In this context, ITSoneWB (ITSone WorkBench) represents a well-defined environment collecting and integrating the high quality ITS1 reference collection in ITSoneDB (Santamaria et al., 2017) with DNA metabarcoding well-established analysis pipelines and new tools in an easy-to-use service addressing the eukaryotic domain of life. Specifically, BioMaS, QIIME (Caporaso *et al.*, 2010), QIIME2 (Bolyen *et al.*, 2019) Mothur (Schloss *et al.*, 2009) pipelines were included and new tools to infer the ITS1 *Barcoding gap and PCR primers pair* in a user defined taxonomic range and to identify ITS1 regions in shotgun metagenomic data were designed, developed and deployed in a Galaxy environment.
 
 Galaxy environment setting
 --------------------------
 
-The Galaxy virtual instance hosting the ITSoneWB was deployed on the
-INFN-Bari ReCaS (Recas - ReCaS Bari, 2021) cloud facility running
-OpenStack (Open Source Cloud Computing Infrastructure, 2021). A
-dedicated tenant was created to host the workbench instance. Finally, a
-Galaxy virtual cluster was deployed to develop the workbench, exploiting
-the resources of the INFN-Bari cloud site, consisting in a front-end
-server running Galaxy 19.05 and the slurm server and 2 Worker Node (WN),
-each fit out with 8 CPUs and 16 Gb RAM and running CentOS 7. The TOSCA
-(TOSCA Simple Profile in YAML Version 1.0, 2021) templates used to
-deploy the cluster are hosted on github:
-[https://github.com/ibiom-cnr/itsonewb/tree/master/galaxy-deployment](https://github.com/ibiom-cnr/itsonewb/tree/master/galaxy-deployment).
+The Galaxy virtual instance hosting the ITSoneWB was deployed on the INFN-Bari ReCaS (Recas - ReCaS Bari, 2021) cloud facility running OpenStack (Open Source Cloud Computing Infrastructure, 2021). A dedicated tenant was created to host the workbench instance. Finally, a Galaxy virtual cluster was deployed to develop the workbench, exploiting the resources of the INFN-Bari cloud site, consisting in a front-end server running Galaxy 19.05 and the slurm server and 2 Worker Node (WN), each fit out with 8 CPUs and 16 Gb RAM and running CentOS 7. The TOSCA (TOSCA Simple Profile in YAML Version 1.0, 2021) templates used to deploy the cluster are hosted on `github <https://github.com/ibiom-cnr/itsonewb/tree/master/galaxy-deployment>`_.
 
-A comprehensive description of Galaxy environment deployment is
-available in (Tangaro *et al.*, 2020).
+A comprehensive description of Galaxy environment deployment is available in (Tangaro *et al.*, 2020).
 
 Tools and Database implementation and deployment
---------------------------------------------
+------------------------------------------------
 
-### ITSoneDB 
+ITSoneDB 
+^^^^^^^^
 
-ITSoneDB is available as a free web service at
-[http://itsonedb.cloud.ba.infn.it/](http://itsonedb.cloud.ba.infn.it/) where data query and download are
-enabled through a simple web-interface, whereas metadata can be accessed
-by cross-linking to ENA. ITSoneDB is updated every 6 months and always
-curated.
+ITSoneDB is available as a free web service `here <http://itsonedb.cloud.ba.infn.it/>`_ where data query and download are enabled through a simple web-interface, whereas metadata can be accessed by cross-linking to ENA. ITSoneDB is updated every 6 months and always curated.
 
-It collects ITS1 sequences and the associated taxonomic annotation
-originated from European Nucleotide Archive (ENA). The annotation of
-ITS1 boundaries were also refined or de novo inferred by using a
-reference-based approach relying on the mapping of the Hidden Markov
-Models (HMM) relative to conserved ribosomal gene for RNA 18S (Rfam
-accession: RF01960) and 5.8S (RF00002) on the original sequence.
+It collects ITS1 sequences and the associated taxonomic annotation originated from European Nucleotide Archive (ENA). The annotation of ITS1 boundaries were also refined or de novo inferred by using a reference-based approach relying on the mapping of the Hidden Markov Models (HMM) relative to conserved ribosomal gene for RNA 18S (Rfam accession: RF01960) and 5.8S (RF00002) on the original sequence.
 
-Moreover the integration of ITSoneDB with the Marine reference databases
-(Klemetsen *et al.*, 2018) is ongoing within the ELIXIR EXCELERATE
-Projects and it is already implemented into the MGnify pipeline
-(Mitchell *et al.*, 2020) at EMBL-EBI as reference ITS1 collection and
-in META-pipe (Robertsen *et al.*, 2016). All these actions aimed at
-increasingly enhance its usefulness, exposure and interoperability in
-agreement to the FAIR (Wilkinson *et al.*, 2016) data principles,
-thereby improving its long-term value and reuse.
+Moreover the integration of ITSoneDB with the Marine reference databases (Klemetsen *et al.*, 2018) is ongoing within the ELIXIR EXCELERATE Projects and it is already implemented into the MGnify pipeline (Mitchell *et al.*, 2020) at EMBL-EBI as reference ITS1 collection and in META-pipe (Robertsen *et al.*, 2016). All these actions aimed at increasingly enhance its usefulness, exposure and interoperability in agreement to the FAIR (Wilkinson *et al.*, 2016) data principles, thereby improving its long-term value and reuse.
 
 The same query criteria available in ITSoneDB have been implemented in
 ITSoneWB in order to retrieve data by accession number (i.e. by using
 ENA accession number) and/or by taxon name (e.g. species name).
 
-### ITSoneDB vs. shotgun mapping tool
+ITSoneDB vs. shotgun mapping tool
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The easiest way to taxonomically classify shotgun metagenomic data is to
 search for DNA barcoding makers , such as 16S and 18S ribosomal RNA
