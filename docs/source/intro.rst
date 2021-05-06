@@ -36,7 +36,7 @@ We developed a Python script allowing users to search for ITS1 regions in shotgu
 It is important to note that the choice between the single-end and the paired-end mapping may influence the results. In particular, in PE mapping both the reads must pass the query coverage threshold.
 
 .. figure:: _static/img/intro/image1.png
-   :scale: 100 %
+   :scale: 20 %
    :align: center
 
 *Supplementary Figure 1: A representation of the implemented mapping schema. Red and blue lines correspond, respectively, to paired- and single-end reads. For PE reads, R1 and R2 represents the forward and the reverse reads, respectively.*
@@ -104,7 +104,7 @@ The barcoding gap was then computed in the user selected clade by using two appr
 Currently, this tool allows to measure the barcoding gap at genus and species level.
 
 Computing and Data Policy
-=========================
+-------------------------
 
 ITSoneWB is available `here <http://itsonewb.cloud.ba.infn.it/galaxy>`_ through both registered and anonymous access. Aside from the access modality, the user can exert the whole set of implemented utility and pipelines. Nonetheless different computational capacity, storage and data latency are assigned to registered and anonymous users. In particular, 4 parallel jobs and 1 latency month and 2 parallel jobs, 500 Mb and 3 latency days are ensured to registered and anonymous users, respectively.
 
