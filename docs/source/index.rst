@@ -16,7 +16,7 @@ In this context, ITSoneWB (ITSone WorkBench) represents a well-defined environme
 
 .. toctree::
    :maxdepth: 2
-   :caption: General Informations
+   :caption: General Information
 
    intro.rst
    auth.rst
