@@ -29,7 +29,7 @@ SHELL ["conda", "run", "-n", "biomas", "/bin/bash", "-c"]
 
 # Install dependencies
 RUN apt-get update --fix-missing && \
-    apt-get install -y gcc libfontconfig xvfb && \
+    apt-get install -y gcc libfontconfig xvfb libtbb-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 

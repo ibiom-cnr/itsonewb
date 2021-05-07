@@ -1,4 +1,4 @@
-#/usr/bin/env python
+#!/usr/bin/env python
 
 import os, sys
 import argparse
@@ -17,17 +17,17 @@ def cli_options():
   parser.add_argument('-p1', dest='in_seq_1', help='First sequence input file')
   parser.add_argument('-p2', dest='in_seq_2', help='Second sequence input file')
   parser.add_argument('-b', dest='basename', help='Sample name')
-  parser.add_argument('-F', dest='function_folder', help='Cython function folder')
+  parser.add_argument('-F', dest='function_folder', default="/opt/biomas", help='Cython function folder')
   ### quality check and consensus outputs
   parser.add_argument('-f', dest='fragment_lenght', default="0", help='Fragment length (optional)')
   parser.add_argument('-p', dest='n_threads', help='Number of threads for bowtie2')
   ### bowtie2 and tango execution ITSoneDB
-  parser.add_argument('-i', dest='bowtie2_indexes_path', default=None, help='Database: choice the reference bowite indexes [MANDATORY]')
-  parser.add_argument('-v', dest='mapping_file', default=None, help='Mapping file [MANDATORY]')
-  parser.add_argument('-T', dest='tango_folder', help='Tango folder')
-  parser.add_argument('-d', dest='tango_dmp', help='Tango dmp file')
+  parser.add_argument('-i', dest='bowtie2_indexes_path', default="/refdata/bowtie2_indexes_rel138/ITSITSoneDB_all_euk_r138", help='Database: choice the reference bowite indexes [MANDATORY]')
+  parser.add_argument('-v', dest='mapping_file', default="/refdata/bowtie2_indexes_rel138/ITSoneDB_rel138.json.gz", help='Mapping file [MANDATORY]')
+  parser.add_argument('-T', dest='tango_folder', default="/opt/tango/New_TANGO_perl_version/", help='Tango folder')
+  parser.add_argument('-d', dest='tango_dmp', default="/refdata/bowtie2_indexes_rel138/ITSoneDB_1.138", help='Tango dmp file')
   ### Tree Builder for Tango execution
-  parser.add_argument('-n', dest='node_file', help='tabular file containing the annotation info needed to build the tree')
+  parser.add_argument('-n', dest='node_file', default="/refdata/bowtie2_indexes_rel138/visualization_ITSoneDB_r131.dmp", help='tabular file containing the annotation info needed to build the tree')
 
   return parser.parse_args()
 
