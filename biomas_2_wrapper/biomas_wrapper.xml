@@ -2,6 +2,7 @@
   <description>- a modular pipeline for Bioinformatic analysis of Metagenomic AmpliconS</description>
   <requirements>
     <requirement type="package" version="2.7">python</requirement>
+    <requirement type="package" version="4.8.7">qt</requirement>
     <requirement type="package">fastqc</requirement>
     <requirement type="package">bowtie2</requirement>
     <requirement type="package">numpy</requirement>
