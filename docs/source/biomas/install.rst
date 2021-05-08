@@ -180,3 +180,16 @@ To install BioMaS on Galaxy:
      </section>
 
 #. Finally restart Galaxy.
+
+Reference Data
+--------------
+
+ITSoneDB (r138) BioMaS indexes can be downloaded `here <http://cloud.recas.ba.infn.it:8080/v1/AUTH_3b4918e0a982493e8c3ebcc43586a2a8/ITSoneWB/itsonedb_biomas2_indexes.tar.gz>`_.
+
+The archive includes:
+
+#. Bowtie2 indexes, i.e. ``bowtie2_indexes_rel138/ITSITSoneDB_all_euk_r138*``files.
+#. Mapping file (ITSoneDB_rel138.json.gz), i.e. the tabular file containing the correspondence between ITSoneDB accession and NCBI taxonomy ID.
+#. Node file (visualization_ITSoneDB_r131.dmp), i.e. tabular file containing the annotation info needed to build the tree.
+
+To include them in Galaxy, please refer to the `Galaxy Project documnetation <https://galaxyproject.org/admin/tools/data-tables/>`_. The ``*loc`` files are on our github repository (``biomas_2_wrapper/tool-data``) with the corresponding ``tool_data_table_conf.xml`` entry.
