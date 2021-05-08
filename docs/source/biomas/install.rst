@@ -120,11 +120,11 @@ An example of its application is available below (Please not that it expects the
 ::
 
   python bowtie2-execution_ITSoneDB.py \
-      -v /export/BRUNO_JUNE2020/bowtie2_indexes_rel138/ITSoneDB_rel138.json.gz \
-      -i /export/BRUNO_JUNE2020/bowtie2_indexes_rel138/ITSITSoneDB_all_euk_r138   \
+      -v /path_to/bowtie2_indexes_rel138/ITSoneDB_rel138.json.gz \
+      -i /path_to/bowtie2_indexes_rel138/ITSITSoneDB_all_euk_r138   \
       -t 10 \
       -T ~/TANGO/New_TANGO_perl_version/ \
-      -d /export/BRUNO_JUNE2020/bowtie2_indexes_rel138/ITSoneDB_1.138
+      -d /path_to/bowtie2_indexes_rel138/ITSoneDB_1.138
 
 Tree building and taxonomic summary preparation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -155,9 +155,28 @@ An example of its application is available below (Please not that it expects the
 ::
 
   python new_tree_builder_for_perl_tango.py \
-      -d /export/BRUNO_JUNE2020/bowtie2_indexes_rel138/visualization_ITSoneDB_r131.dmp
+      -d /path_to/bowtie2_indexes_rel138/visualization_ITSoneDB_r131.dmp
 
 
 Install on Galaxy
 -----------------
 
+Galaxy is able to automatically solve conda dependecies when a tool is started.
+
+To install BioMaS on Galaxy:
+
+#. Clone the ITSoneWb repository
+
+   ::
+     
+     git clone https://github.com/ibiom-cnr/itsonewb.git
+
+#. Add BioMaS entry in the galaxy ``tool_conf.xml`` file with your favourite editor:
+
+   ::
+     
+     <section name="BioMaS" id="biomas">
+         <tool file="/path_to_itsonewb/itsonewb/biomas_2_wrapper/biomas_wrapper.xml" />
+     </section>
+
+#. Finally restart Galaxy.
