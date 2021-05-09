@@ -36,9 +36,17 @@ RUN apt-get update --fix-missing && \
 # Build BioMaS Cython function
 RUN python setup.py build_ext --inplace
 
-# Add Reference data
-COPY ./bowtie2_indexes_rel138/ /refdata/bowtie2_indexes_rel138
-COPY ./New_TANGO_perl_version /opt/tango/New_TANGO_perl_version
+# Add ITSoneDB Reference data
+ADD http://cloud.recas.ba.infn.it:8080/v1/AUTH_3b4918e0a982493e8c3ebcc43586a2a8/ITSoneWB/itsonedb_biomas2_indexes.tar.gz /refdata/itsonedb_biomas2_indexes.tar.gz
+RUN cd /refdata && \
+    tar xvzf /refdata/itsonedb_biomas2_indexes.tar.gz && \
+    rm /refdata/itsonedb_biomas2_indexes.tar.gz
+
+# Add Tango
+ADD http://cloud.recas.ba.infn.it:8080/v1/AUTH_3b4918e0a982493e8c3ebcc43586a2a8/ITSoneWB/new_tango_perl_version.tar.gz /opt/tango/new_tango_perl_version.tar.gz
+RUN cd /opt/tango && \
+    tar xvzf /opt/tango/new_tango_perl_version.tar.gz && \
+    rm /opt/tango/new_tango_perl_version.tar.gz
 
 # Make RUN commands use default environment
 SHELL ["/bin/bash", "-c"]
