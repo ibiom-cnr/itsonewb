@@ -9,7 +9,7 @@ ITSoneDB Connector
 The ITSoneDB Connector allows querying ITSoneDB by using an API service with the same query schema available at the database website. In particular, it is possible to access the ITSoneDB entries by using the following parameters: species name, taxon name and entry accession (Supplementary Figure 5*)*.
 
 .. figure:: _static/img/intro/image5.jpg
-   :scale: 100 %
+   :scale: 30 %
    :align: center
 
 *Supplementary Figure 5: : A snapshot of the ITSoneDB connector Service. ITSoneDB entries are accessible by using species name, taxon name and entry accession.*
@@ -17,7 +17,7 @@ The ITSoneDB Connector allows querying ITSoneDB by using an API service with the
 In order to streamline querying by using both species and taxon names an interactive drop-down menù is available (Supplementary Figure 5). For instance, in *Figure ITSoneDB Connector 2* ITSoneDB is accessed by using the species name *Aspergillus flavus*.
 
 .. figure:: _static/img/intro/image6.jpg
-   :scale: 100 %
+   :scale: 30 %
    :align: center
 
 *Supplementary Figure 6: The ITSoneDB connector service suggests a list of possible species names according to the user typing.*
@@ -25,7 +25,7 @@ In order to streamline querying by using both species and taxon names an interac
 As the species name selection is completed by clicking the "execute" button, the data retrieval from ITSoneDB is executed Supplementary Figure 7).
 
 .. figure:: _static/img/intro/image7.jpg
-   :scale: 100 %
+   :scale: 30 %
    :align: center
 
 *Supplementary Figure 7: Following the query parameters selection ITSoneDB is accessed by clicking the "Execute" button.*
@@ -43,7 +43,7 @@ The query retrieves ITS1 fasta sequences and the contextual metadata. As exemple
 This information are downloadable as a textual file that can be imported in Excel.
 
 .. figure:: _static/img/intro/image8.jpg
-   :scale: 100 %
+   :scale: 30 %
    :align: center
 
 *Supplementary Figure 8: A snapshot of the obtained metadata file.*
@@ -54,7 +54,7 @@ ITSoneDB vs. shotgun mapping tool
 The ITS1 *shotgun mapping* service allows to identify and eventually taxonomically classify ITS1 regions in metagenomic shotgun data.
 
 .. figure:: _static/img/intro/image9.jpg
-   :scale: 100 %
+   :scale: 30 %
    :align: center
 
 *Supplementary Figure 9: A snapshot of the tool setup mask.*
@@ -64,7 +64,7 @@ The ITS1 *shotgun mapping* service allows to identify and eventually taxonomical
 It is important to note the choice between the single-end and the paired-end mapping may influence the results. In particular, in PE mapping both the reads must pass the query coverage threshold.
 
 .. figure:: _static/img/intro/image1.png
-   :scale: 100 %
+   :scale: 70 %
    :align: center
 
 *Supplementary Figure 10: A schematic representation of the mapping schema implemented in the tool. Red and blue lines correspond, respectively, to paired- and single-end reads. For PE reads, R1 and R2 represents the forward and the reverse reads, respectively.*

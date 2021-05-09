@@ -7,7 +7,7 @@ service provider.
 In order to register to ITSoneWB, the user needs just to access the home page by using the `link <http://itsonewb.cloud.ba.infn.it/galaxy>`_ and select "*Login or register*" (red arrow in the Supplementary Figure 2).
 
 .. figure:: _static/img/intro/image2.jpg
-   :scale: 100 %
+   :scale: 20 %
    :align: center
 
 *Supplementary Figure 2: ITSoneWB home page. The red arrow points to "Login or register".*
@@ -15,7 +15,7 @@ In order to register to ITSoneWB, the user needs just to access the home page by
 Once the login page is available, the registered users need just to fill the fields with the chosen username (or email) and password, respectively, and push "*Login*". Unregistered users may proceed to the registration portal by clicking "*Register here*" (Supplementary Figure 3).
 
 .. figure:: _static/img/intro/image3.jpg
-   :scale: 100 %
+   :scale: 20 %
    :align: center
 
 *Supplementary Figure 3: ITSoneWB login page. The red arrow points to the registration page link.*
@@ -33,7 +33,7 @@ To complete the registration, it is required to fill the fields with the informa
 By clicking "*Create*", the account will be automatically created and the user logged in to ITSoneWB.
 
 .. figure:: _static/img/intro/image4.jpg
-   :scale: 100 %
+   :scale: 20 %
    :align: center
 
 *Supplementary Figure 4: Registration page.*
