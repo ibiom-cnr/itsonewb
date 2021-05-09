@@ -85,8 +85,11 @@ Reference mapping and taxonomic classification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step encompasses three procedures:  
+
 #. it maps metabarcode data on ITSoneDB fasta collection by using bowtie2;  
+
 #. the alignments are filtered according to identity percentage and query coverage;
+
 #. it performs taxonomic annotation by using TANGO.  
 
 Following the help page of the script:
