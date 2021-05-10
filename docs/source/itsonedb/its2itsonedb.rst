@@ -1,5 +1,5 @@
 ITSoneDB vs. shotgun mapping tool
----------------------------------
+=================================
 
 The ITS1 *shotgun mapping* service allows to identify and eventually taxonomically classify ITS1 regions in metagenomic shotgun data.
 

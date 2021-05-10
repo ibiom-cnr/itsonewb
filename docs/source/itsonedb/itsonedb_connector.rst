@@ -1,5 +1,5 @@
 ITSoneDB Connector
-------------------
+==================
 
 The ITSoneDB Connector allows querying ITSoneDB by using an API service with the same query schema available at the database website. In particular, it is possible to access the ITSoneDB entries by using the following parameters: species name, taxon name and entry accession (Supplementary Figure 5*)*.
 
