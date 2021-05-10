@@ -43,11 +43,11 @@ Usage
 Map and parse metagenomic data to ITSoneDB.
 
 .. figure:: /_static/img/ITS_to_ITSoneDB_wrapper/ITS_to_ITSoneDB_home.png
-   :scale: 70 %
+   :scale: 20 %
    :align: center
 
 .. figure:: /_static/img/ITS_to_ITSoneDB_wrapper/ITS_to_ITSoneDB_output.png
-   :scale: 70 %
+   :scale: 20 %
    :align: center
 
 For testing purpose, we uploaded test input for BioMaS, in Galaxy shared library. The same inputs can be used for this tool. These can be exported to Galaxy history and used also by anonymous users.
