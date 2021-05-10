@@ -26,5 +26,11 @@ RUN sed -i 's$CXXFLAGS+=-I../../seqan-library-2.0.0/include$CXXFLAGS+=-I/opt/seq
 
 RUN cd /opt/mopo16s && make
 
+# Add ITSoneDB Reference data
+ADD http://cloud.recas.ba.infn.it:8080/v1/AUTH_3b4918e0a982493e8c3ebcc43586a2a8/ITSoneWB/ITS1_parser_ITSoneDB_indexes.tar.gz /refdata/ITS1_parser_ITSoneDB_indexes.tar.gz
+RUN cd /refdata && \
+    tar xvzf /refdata/ITS1_parser_ITSoneDB_indexes.tar.gz && \
+    rm /refdata/ITS1_parser_ITSoneDB_indexes.tar.gz
+
 RUN mkdir -p /data
 WORKDIR /data
