@@ -62,8 +62,6 @@ The ITSoneDB connector provides the output sequences and the metadata file:
    :scale: 30 %
    :align: center
 
-
-
 Galaxy Docker version
 ---------------------
 
@@ -82,3 +80,28 @@ The ITSoneDB Connector tool shipped with the Docker version of the Workbench req
 .. warning::
 
    This version of the ITSoneDB Connector is intended for personal use only. For security reason these information are not public, but the access can be requested at the followinf mail address ``<mail_placeholder>``.
+
+Install on Galaxy
+-----------------
+
+Galaxy is able to automatically solve conda dependecies when a tool is started.
+
+To install the ITSoneDB Connector on Galaxy:
+
+#. Clone the ITSoneWb repository
+
+   ::
+
+     git clone https://github.com/ibiom-cnr/itsonewb.git
+
+#. Add the TSoneDB Connector entry in the galaxy ``tool_conf.xml`` file with your favourite editor:
+
+   ::
+
+     <section name="ITSoneDB" id="itsonedb">
+         <tool file="/path_to_itsonewb/itsonewb/itsonedb_wrapper/itsonedb_wrapper.xml" />
+     </section>
+
+#. Add the search drop down menu as ``.loc`` files. To include them in Galaxy, please refer to the `Galaxy Project documnetation <https://galaxyproject.org/admin/tools/data-tables/>`_. The ``*loc`` files are on our github repository (``itsonedb_wrapper/tool-data``) with the corresponding ``tool_data_table_conf.xml`` entry.
+
+#. Finally restart Galaxy.
