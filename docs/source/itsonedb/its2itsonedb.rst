@@ -102,7 +102,7 @@ You can pull it from DockerHub with the following command:
 
 ::
 
-  docker push ibiomcnr/its-to-itsonedb
+  docker pull ibiomcnr/its-to-itsonedb
 
 .. note::
 
