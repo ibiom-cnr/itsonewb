@@ -26,5 +26,8 @@ RUN sed -i 's$CXXFLAGS+=-I../../seqan-library-2.0.0/include$CXXFLAGS+=-I/opt/seq
 
 RUN cd /opt/mopo16s && make
 
+RUN echo "export PATH=/opt/mopo16s/release:$PATH" >> ~/.bashrc
+ENV PATH /opt/mopo16s/release:$PATH
+
 RUN mkdir -p /data
 WORKDIR /data
