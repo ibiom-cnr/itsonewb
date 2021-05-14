@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# This script is only for the docker version
+
 import argparse
 import gzip
 import os
