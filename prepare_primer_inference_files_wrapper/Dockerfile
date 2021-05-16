@@ -10,6 +10,7 @@ RUN conda create --name prepare_input_reference_files python=2.7 vsearch -c cond
 COPY . /opt/prepare_input_reference_files
 
 # Add ITSoneDB Reference data
+RUN mkdir -p /refdata
 RUN mv /opt/prepare_input_reference_files/ITS1_r131_plus_flanking_region.fna.gz /refdata/ITS1_r131_plus_flanking_region.fna.gz
 RUN mv /opt/prepare_input_reference_files/files_wrapper/node2tax_name_path.tsv.gz /refdata/node2tax_name_path.tsv.gz
 
