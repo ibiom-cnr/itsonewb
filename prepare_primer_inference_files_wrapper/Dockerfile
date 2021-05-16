@@ -12,7 +12,7 @@ COPY . /opt/prepare_input_reference_files
 # Add ITSoneDB Reference data
 RUN mkdir -p /refdata
 RUN mv /opt/prepare_input_reference_files/ITS1_r131_plus_flanking_region.fna.gz /refdata/ITS1_r131_plus_flanking_region.fna.gz
-RUN mv /opt/prepare_input_reference_files/files_wrapper/node2tax_name_path.tsv.gz /refdata/node2tax_name_path.tsv.gz
+RUN mv /opt/prepare_input_reference_files/node2tax_name_path.tsv.gz /refdata/node2tax_name_path.tsv.gz
 
 # Make RUN commands use the new environment:
 RUN chmod +x /opt/prepare_input_reference_files/prepare-input-reference-files
