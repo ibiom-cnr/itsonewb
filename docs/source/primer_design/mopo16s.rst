@@ -82,7 +82,7 @@ To install Mopo16s on Galaxy:
    ::
 
      <section name="Primer Design" id="primer_design">
-         <tool file="/home/galaxy/itsonewb/mopo16s_wrapper/mopo16s_wrapper.xml" />
+         <tool file="/path/to/itsonewb/mopo16s_wrapper/mopo16s_wrapper.xml" />
      </section>
 
 #. Add the reference primer pair using the ``.loc`` files. To include them in Galaxy, please refer to the `Galaxy Project documnetation <https://galaxyproject.org/admin/tools/data-tables/>`_. The ``*loc`` files are on our github repository (``mopo16s_wrapper/tool-data``) with the corresponding ``tool_data_table_conf.xml`` entry.
