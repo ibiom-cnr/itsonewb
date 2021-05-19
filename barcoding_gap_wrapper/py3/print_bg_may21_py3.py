@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 from numpy import mean
 import os
