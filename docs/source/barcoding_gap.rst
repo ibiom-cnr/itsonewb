@@ -3,8 +3,6 @@ Barcoding gap
 
 Considering a specific sequence collection (e.g. ITS1 sequences belonging to two *Aspergillus* species), the barcoding gap corresponds to the difference between the greatest intra-specific distance and the smallest inter-specific distance. It is fundamental to evaluate the ability of a specific barcode to discriminate among closely related species and the existence of a barcoding-gap allows to verify it.
 
-![](https://github.com/ibiom-cnr/itsonewb/blob/master/myMediaFolder/media/image13.jpg)
-
 .. figure:: /_static/img/intro/image13.jpg
    :scale: 30 %
    :align: center
@@ -22,8 +20,6 @@ A boxplot, comparing intra- and inter- group distances is automatically produced
 - the difference between the mean values of intra-taxon and inter-taxa genetic distance;
 
 - the minimum inter-taxa and maximum intra-taxon genetic distance.
-
-![](https://github.com/ibiom-cnr/itsonewb/blob/master/myMediaFolder/media/image14.png)
 
 .. figure:: /_static/img/intro/image14.png
    :scale: 30 %
