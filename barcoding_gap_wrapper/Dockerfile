@@ -7,7 +7,7 @@ MAINTAINER ma.tangaro@ibiom.cnr.it
 RUN conda create --name barcoding_gap numpy matplotlib pandas plotnine -c conda-forge -c bioconda && \
     conda clean --tarballs --yes > /dev/null
 
-COPY . /opt/barcoding_gap
+COPY ./py3 /opt/barcoding_gap
 
 # Add Reference data
 ADD http://cloud.recas.ba.infn.it:8080/v1/AUTH_2e1bc341b93f480e9b936112962613d8/ITSoneWB/barcoding_gap.tar.gz /refdata/barcoding_gap.tar.gz
