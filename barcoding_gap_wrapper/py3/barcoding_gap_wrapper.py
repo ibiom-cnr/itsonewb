@@ -61,7 +61,7 @@ def barcoding_gap_wrapper():
 
   # convert stdout to list
   import ast
-  stdout = ast.literal_eval(stdout)
+  stdout = ast.literal_eval(str(stdout,'UTF-8'))
 
   sys.stdout.write('\nThe Barcoding Gap inferred as the difference of inter and intra group mean is %s' % stdout[0])
   sys.stdout.write('\nThe Barcoding Gap inferred as the difference of the largest intragroup distance and the smallest intergroup distance is %s ' % stdout[1])
