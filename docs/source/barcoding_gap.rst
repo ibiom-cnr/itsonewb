@@ -155,6 +155,14 @@ Download and untar them:
 Docker usage
 ------------
 
+The Barcoding Gap inference tool is also packaged as Docker Container, hosted on `DockerHub <https://hub.docker.com/r/ibiomcnr/barcoding-gap>`_.
+
+You can pull it from DockerHub with the following command:
+
+::
+
+  docker pull ibiomcnr/barcoding-gap
+
 The usage of the barcoding gap tool from the docker container is the same as that described in the section **Command line usage**, using ``print-bg``as alias to call the script.
 
 .. note::
