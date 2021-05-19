@@ -4,7 +4,7 @@ FROM continuumio/miniconda3
 
 MAINTAINER ma.tangaro@ibiom.cnr.it
 
-RUN conda create --name barcoding_gap python=2.7 numpy matplotlib pandas plotnine -c conda-forge -c bioconda && \
+RUN conda create --name barcoding_gap numpy matplotlib pandas plotnine -c conda-forge -c bioconda && \
     conda clean --tarballs --yes > /dev/null
 
 COPY . /opt/barcoding_gap
@@ -16,7 +16,7 @@ RUN cd /refdata && \
     rm barcoding_gap.tar.gz
 
 # Make RUN commands use the new environment:
-COPY /opt/barcoding_gap/print_bg.py /opt/barcoding_gap/print-bg
+RUN cp /opt/barcoding_gap/print_bg_may21_py3.py /opt/barcoding_gap/print-bg
 RUN chmod +x /opt/barcoding_gap/print-bg
 ENV PATH /opt/barcoding_gap:$PATH
 
