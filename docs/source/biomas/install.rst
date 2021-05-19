@@ -22,7 +22,31 @@ On Ubuntu:
 Install as standalone tool
 --------------------------
 
-The following tools are used in BioMaS, and can be installed using `conda <https://docs.conda.io/en/latest/miniconda.html>`_, thorough its `Bioconda channel <https://bioconda.github.io/>`_: `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_, `FLASh <https://ccb.jhu.edu/software/FLASH/>`_, `trim-galore <https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/>`_, `vsearch <https://github.com/torognes/vsearch>`_, `bowtie2 <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_, `TANGO <https://sourceforge.net/projects/taxoassignment>`_ (Copy the New_TANGO_perl_version in `/home/galaxy`).  
+The following tools are used in BioMaS, and can be installed using `conda <https://docs.conda.io/en/latest/miniconda.html>`_, thorough its `Bioconda channel <https://bioconda.github.io/>`_:
+
+#. `FastQC <https://www.bioinformatics.babraham.ac.uk/projects/fastqc/>`_,
+
+#. `FLASh <https://ccb.jhu.edu/software/FLASH/>`_,
+
+#. `trim-galore <https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/>`_
+
+#. `vsearch <https://github.com/torognes/vsearch>`_,
+
+#. `bowtie2 <http://bowtie-bio.sourceforge.net/bowtie2/index.shtml>`_,
+
+#. `TANGO <https://sourceforge.net/projects/taxoassignment>`_ (Copy the New_TANGO_perl_version in `/home/galaxy`).  
+
+The following command will install BioMaS dependencies in a virtual environment called ``biomas``
+
+::
+
+  $ conda create --name biomas python=2.7 qt=4.8.7 fastqc bowtie2 numpy pysam biopython FLASH trim-galore ete2 xvfbwrapper vsearch argcomplete cython -c conda-forge -c bioconda
+
+To activate the virtual environment:
+
+::
+
+  $ conda activate biomas
 
 Preparation
 ^^^^^^^^^^^
@@ -37,8 +61,8 @@ Usage
 
 In the following are listed listed the three python scripts that allows to perform **BioMaS** on ITS1 data, by using `ITSoneDB <https://pubmed.ncbi.nlm.nih.gov/29036529/?from_term=Fosso+B&from_cauthor_id=26130132&from_pos=8>`_ as reference database.  
 
-Read Merging and dereplication
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``Read Merging and dereplication``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step encompasses three procedures:  
 
@@ -81,8 +105,8 @@ An example of its application is available below (Please not that it expects the
     -b full_test \
     -t 10 \
   
-Reference mapping and taxonomic classification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``Reference mapping and taxonomic classification``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step encompasses three procedures:  
 
@@ -129,8 +153,8 @@ An example of its application is available below (Please not that it expects the
       -T ~/TANGO/New_TANGO_perl_version/ \
       -d /path_to/bowtie2_indexes_rel138/ITSoneDB_1.138
 
-Tree building and taxonomic summary preparation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+``Tree building and taxonomic summary preparation``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This step encompasses two procedures:  
 #. taxonomic tree building according to taxonomic assignments;  
