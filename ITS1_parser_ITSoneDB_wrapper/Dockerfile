@@ -4,14 +4,7 @@ FROM continuumio/miniconda3
 
 MAINTAINER ma.tangaro@ibiom.cnr.it
 
-# Install dependencies
-# http://www.metagenomics.wiki/tools/bowtie2/install/libtbb-so-2
-RUN apt-get update --fix-missing && \
-    apt-get install -y gcc libtbb-dev && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN conda create --name its1-to-itsonedb python=2.7 bowtie2=2.3.4.3 argcomplete=1.9.4 numpy=1.15.4 pysam -c conda-forge -c bioconda && \
+RUN conda create --name its1-to-itsonedb python=2.7 bowtie2=2.3.4.3 argcomplete=1.9.4 numpy=1.15.4 pysam tbb=2020.2 -c conda-forge -c bioconda && \
     conda clean --tarballs --yes > /dev/null
 
 COPY . /opt/its1_to_itsonedb
