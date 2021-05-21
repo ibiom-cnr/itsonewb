@@ -120,7 +120,7 @@ In this case, file distances have been downloaded and extracted in a directory n
 Install as standalone tool
 --------------------------
 
-The barcoding gap inference tool can be found on the `ITSoneWB Github <https://raw.githubusercontent.com/ibiom-cnr/itsonewb/master/barcoding_gap_wrapper/py3/print_bg_may21_py3.py>_ repository.
+The barcoding gap inference tool can be found on the `ITSoneWB Github <https://raw.githubusercontent.com/ibiom-cnr/itsonewb/master/barcoding_gap_wrapper/py3/print_bg_may21_py3.py>`_ repository.
 
 Download the script:
 
