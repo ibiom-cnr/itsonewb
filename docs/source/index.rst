@@ -30,6 +30,7 @@ In this context, ITSoneWB (ITSone WorkBench) represents a well-defined environme
    biomas/biomas.rst
    primer_design/primer_design_tools.rst
    barcoding_gap.rst
+   itsonedb_docker.rst
 
 Indices and tables
 ==================
