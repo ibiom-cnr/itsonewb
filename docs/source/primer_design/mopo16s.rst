@@ -89,6 +89,11 @@ To install Mopo16s on Galaxy:
 
 #. Finally restart Galaxy.
 
+Command line usage
+------------------
+
+Please refer to Mopo16S official documentation `here <https://www.dei.unipd.it/~baruzzog/mopo16S.html#Usag)>`_, to run Mopo16S as command line tool.
+
 Install as standalone tool
 --------------------------
 
