@@ -47,10 +47,30 @@ To check biomas options:
     -n NODE_FILE          tabular file containing the annotation info needed to
                           build the tree
 
+To properly use the BioMaS Docker container create a directory and store inside your input data, in the following ``fungi-illumina1_short.fastq``and ``fungi-illumina2_short.fastq``
+
+::
+
+  # mkdir biomas_docker
+
+  # cp source/fungi-illumina1_short.fastq biomas_docker/
+
+  # cp source/fungi-illumina2_short.fastq biomas_docker/
+
 Since reference data are already included, it can be run as follows:
 
 ::
 
-  docker run -it -v /path/to/your/data:/data ibiomcnr/biomas2 biomas -p1 fungi-illumina1_short.fastq -p2 fungi-illumina2_short.fastout_testout_test
+  docker run -it -v /path/to/your/data:/data ibiomcnr/biomas2 biomas -p1 fungi-illumina1_short.fastq -p2 fungi-illumina2_short.fastq -b output
 
-The output will be located in ``/path/to/your/data`` directory.
+The output will be located in ``/path/to/your/data`` directory, in our example ``biomas_docker``.
+
+::
+
+  # ls biomas_docker
+  bowtie2-execution.log         flash.log                         output_consensus_local_ITS1.sam      output.notCombined_1.fastq           output_tree.svg                  vsearch_conversion.log
+  bowtie2_stdout_glocal_SE.log  fungi-illumina1_short.fastq       output_dereplicated_consensus.fastq  output.notCombined_2.fastq           quality_check_and_consensus.log  vsearch_dereplication.log
+  bowtie2_stdout_local_SE.log   fungi-illumina2_short.fastq       output.extendedFrags.fastq           output_taxonomic_classification.tsv  report_file.txt
+  derep.log                     ITSoneDB_fungi_mapping_data       output.hist                          output_taxonomic_summary.csv         temp
+  fastqc_computation            output_consensus_glocal_ITS1.sam  output.histogram                     output_tree.nwk                      tmp.uc
+

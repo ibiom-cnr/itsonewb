@@ -40,7 +40,7 @@ The following command will install BioMaS dependencies in a virtual environment 
 
 ::
 
-  $ conda create --name biomas python=2.7 qt=4.8.7 fastqc bowtie2 numpy pysam biopython FLASH trim-galore ete2 xvfbwrapper vsearch argcomplete cython -c conda-forge -c bioconda
+  $ conda create --name biomas python=2.7 qt=4.8.7 fastqc bowtie2 numpy pysam biopython FLASH trim-galore ete2 xvfbwrapper vsearch argcomplete tbb=2020.2 cython -c conda-forge -c bioconda
 
 To activate the virtual environment:
 
