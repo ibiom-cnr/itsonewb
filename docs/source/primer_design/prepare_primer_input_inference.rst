@@ -3,8 +3,8 @@ Prepare primer input inference
 
 This tool create primer input inference file for mopo16s tool.
 
-Usage
------
+Galaxy usage
+------------
 
 To run the tool using ITSoneWB wrapper:
 
