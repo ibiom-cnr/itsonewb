@@ -89,6 +89,13 @@ To install Mopo16s on Galaxy:
 
 #. Finally restart Galaxy.
 
+Install as standalone tool
+--------------------------
+
+Please follow the instructions `here <https://www.dei.unipd.it/~baruzzog/mopo16S.html#Installation>`_ to install Mopo16S.
+
+ITSoneWB is currently using `SeqAn 2.1.1 <http://packages.seqan.de/seqan-src/seqan-src-2.1.1.tar.gz>`_.
+
 Docker version
 --------------
 
@@ -232,3 +239,14 @@ Mopo16S executable are in ``/opt/mopo16s/release``. This path has been added to 
   
   Mandatory arguments to long options are also mandatory for any corresponding
   short options.
+
+Mopo16S options are listed `here <https://www.dei.unipd.it/~baruzzog/mopo16S.html#Usag)>`_.
+
+
+Input data needs to be mounted in ``/data`` directory with the command
+
+::
+
+  # docker run -it -v /path/to/data:/data ibiomcnr/mopo16s mopo16S
+
+where ``/path/to/data`` is the local path of your data.
