@@ -5,7 +5,7 @@
     <requirement type="package" version="2.3.4.3">bowtie2</requirement>
     <requirement type="package" version="1.9.4">argcomplete</requirement>
     <requirement type="package" version="1.15.4">numpy</requirement>
-    <requirement type="package" version="0.6">pysam</requirement>
+    <requirement type="package" version="0.16.0.1">pysam</requirement>
   </requirements>
   <command>
     <![CDATA[  
