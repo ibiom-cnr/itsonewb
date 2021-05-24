@@ -19,6 +19,29 @@ On Ubuntu:
 
   # apt-get install libxrender1 libsm6 libxt6 xvfb
 
+Install on Galaxy
+-----------------
+
+Galaxy is able to automatically solve conda dependecies when a tool is started.
+
+To install BioMaS on Galaxy:
+
+#. Clone the ITSoneWb repository
+
+   ::
+
+     git clone https://github.com/ibiom-cnr/itsonewb.git
+
+#. Add BioMaS entry in the galaxy ``tool_conf.xml`` file with your favourite editor:
+
+   ::
+
+     <section name="BioMaS" id="biomas">
+         <tool file="/path_to_itsonewb/itsonewb/biomas_2_wrapper/biomas_wrapper.xml" />
+     </section>
+
+#. Finally restart Galaxy.
+
 Install as standalone tool
 --------------------------
 
@@ -183,30 +206,6 @@ An example of its application is available below (Please not that it expects the
 
   python new_tree_builder_for_perl_tango.py \
       -d /path_to/bowtie2_indexes_rel138/visualization_ITSoneDB_r131.dmp
-
-
-Install on Galaxy
------------------
-
-Galaxy is able to automatically solve conda dependecies when a tool is started.
-
-To install BioMaS on Galaxy:
-
-#. Clone the ITSoneWb repository
-
-   ::
-     
-     git clone https://github.com/ibiom-cnr/itsonewb.git
-
-#. Add BioMaS entry in the galaxy ``tool_conf.xml`` file with your favourite editor:
-
-   ::
-     
-     <section name="BioMaS" id="biomas">
-         <tool file="/path_to_itsonewb/itsonewb/biomas_2_wrapper/biomas_wrapper.xml" />
-     </section>
-
-#. Finally restart Galaxy.
 
 Reference Data
 --------------
