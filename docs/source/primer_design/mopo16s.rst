@@ -3,8 +3,8 @@ Mopo16s
 
 Mopo16s input data can be created using the ITSoneWB tool :doc:`prepare_primer_input_inference`.
 
-Usage
------
+Galaxy usage
+------------
 
 The tool provides four outputs:
 
@@ -101,8 +101,8 @@ Please follow the instructions `here <https://www.dei.unipd.it/~baruzzog/mopo16S
 
 ITSoneWB is currently using `SeqAn 2.1.1 <http://packages.seqan.de/seqan-src/seqan-src-2.1.1.tar.gz>`_.
 
-Docker version
---------------
+Docker usage
+------------
 
 The tool is also packaged as Docker Container, hosted on `DockerHub <hhttps://hub.docker.com/r/ibiomcnr/mopo16s>`_.
 
@@ -132,9 +132,6 @@ Mopo16S is built using ``seqan v2.1.1``and inside the Docker container is availa
 .. note::
 
    The primer reference pair can be downloaded `here <http://cloud.recas.ba.infn.it:8080/v1/AUTH_2e1bc341b93f480e9b936112962613d8/ITSoneWB/mopo16s_initial_primer_pairs_file.tar.gz>`_.
-   
-Usage
-^^^^^
 
 Mopo16S executable are in ``/opt/mopo16s/release``. This path has been added to the ``$PATH``, therefore you can call mopo16s, easily, with:
 
