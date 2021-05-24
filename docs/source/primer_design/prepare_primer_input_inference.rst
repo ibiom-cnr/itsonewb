@@ -26,7 +26,7 @@ To run the tool using ITSoneWB wrapper:
    :scale: 20 %
    :align: center
 
-4. If no output is crated, an error will be displayed:
+4. If no output is created, an error will be displayed:
 
 .. figure:: /_static/img/prepare_primer_inference_files_wrapper/prepare_input_error.png
    :scale: 20 %
