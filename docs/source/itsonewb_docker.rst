@@ -29,6 +29,6 @@ To run the container:
 Troubleshooting
 ---------------
 
-We experienced `this issue <https://github.com/bgruening/docker-galaxy-stable/issues/575>`_  during the ITSoneWB docker development. To avoid it we reccommend to start with a clean directory and mount it to ``/export`` using the  ``-v`` option.
+We experienced `this issue <https://github.com/bgruening/docker-galaxy-stable/issues/575>`_  during the ITSoneWB docker development. To avoid it we recommend to start with a clean directory and mount it to ``/export`` using the  ``-v`` option.
 
 If the problem persists try to switch to **devicemapper** `storage driver <https://docs.docker.com/storage/storagedriver/device-mapper-driver/#activate-the-devicemapper-after-reboot>`_
