@@ -1,4 +1,4 @@
-Mopo16s
+Mopo16S
 =======
 
 Mopo16s input data can be created using the ITSoneWB tool :doc:`prepare_primer_input_inference`.
