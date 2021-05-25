@@ -94,7 +94,7 @@ Command line usage
 
 Please refer to Mopo16S official documentation `here <https://www.dei.unipd.it/~baruzzog/mopo16S.html#Usag)>`_, to run Mopo16S as command line tool.
 
-In the follwing you can find an example on how to run Mopo16S. In particular the ``reference_set.fasta`` is the output of the Prepare input reference file tools, while the ``mopo16s_initial_primer_pairs_file.fa`` can be downloaded `here <http://cloud.recas.ba.infn.it:8080/v1/AUTH_2e1bc341b93f480e9b936112962613d8/ITSoneWB/mopo16s_initial_primer_pairs_file.tar.gz>`_.
+In the follwing you can find an example on how to run Mopo16S. In particular the ``reference_set.fasta`` is the output of the **Prepare primer input inference** tool, while the ``mopo16s_initial_primer_pairs_file.fa`` can be downloaded `here <http://cloud.recas.ba.infn.it:8080/v1/AUTH_2e1bc341b93f480e9b936112962613d8/ITSoneWB/mopo16s_initial_primer_pairs_file.tar.gz>`_.
 
 ::
 
@@ -346,6 +346,6 @@ In the following we show how to use the dockerized version of mopo16S:
   
   where ``/path/to/data`` is the local path of your data.
 
-The first input, ``reference_set.fasta`` is the output of the **Prepare input reference file** tool, while the `` mopo16s_initial_primer_pairs_file.fa`` is the reference prime paire described in the previous sections.
+The first input, ``reference_set.fasta`` is the output of the **Prepare input reference file** tool, while the ``mopo16s_initial_primer_pairs_file.fa`` is the reference prime paire described in the previous sections.
 
 Both the inputs have to be moved in the local ``/path/to/the/data`` directory.
