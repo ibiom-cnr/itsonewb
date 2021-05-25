@@ -94,6 +94,12 @@ Command line usage
 
 Please refer to Mopo16S official documentation `here <https://www.dei.unipd.it/~baruzzog/mopo16S.html#Usag)>`_, to run Mopo16S as command line tool.
 
+In the follwing you can find an example on how to run Mopo16S. In particular the ``reference_set.fasta`` is the output of the Prepare input reference file tools, while the ``mopo16s_initial_primer_pairs_file.fa`` can be downloaded `here <http://cloud.recas.ba.infn.it:8080/v1/AUTH_2e1bc341b93f480e9b936112962613d8/ITSoneWB/mopo16s_initial_primer_pairs_file.tar.gz>`_.
+
+::
+
+  mopo16s reference_set.fasta mopo16s_initial_primer_pairs_file.fa
+
 Install as standalone tool
 --------------------------
 
@@ -137,7 +143,7 @@ Mopo16S executable are in ``/opt/mopo16s/release``. This path has been added to 
 
 ::
 
-  # docker run -it ibiomcnr/mopo16s mopo16S
+  # docker run -it ibiomcnr/mopo16s mopo16s
   
   No reference set file name provided
   Copyright (c) 2015 Francesco Sambo and Giacomo Baruzzo, Dept. of Information Engineering,
@@ -244,11 +250,102 @@ Mopo16S executable are in ``/opt/mopo16s/release``. This path has been added to 
 
 Mopo16S options are listed `here <https://www.dei.unipd.it/~baruzzog/mopo16S.html#Usag)>`_.
 
+Input data needs to be mounted in ``/data`` directory, inside the docker container using the ``-v`` option.
 
-Input data needs to be mounted in ``/data`` directory with the command
+In the following we show how to use the dockerized version of mopo16S:
 
 ::
 
-  # docker run -it -v /path/to/data:/data ibiomcnr/mopo16s mopo16S
+  # docker run -it -v $PWD/docker_test/mopo16s:/data ibiomcnr/mopo16s mopo16s reference_set.fasta mopo16s_initial_primer_pairs_file.fa
+  Read reference set
+  Read initial primer pairs
+  Saving the initial primer pairs in init.primers
+  Saving scores of the primer pairs in init.scores
+  Run #1 started at Tue May 25 05:54:42 2021
+  
+  Run #1 completed at Tue May 25 05:54:43 2021
+  
+  Run #2 started at Tue May 25 05:54:43 2021
+  
+  Run #2 completed at Tue May 25 05:54:43 2021
+  
+  Run #3 started at Tue May 25 05:54:43 2021
+  
+  Run #3 completed at Tue May 25 05:54:44 2021
+  
+  Run #4 started at Tue May 25 05:54:44 2021
+  
+  Run #4 completed at Tue May 25 05:54:44 2021
+  
+  Run #5 started at Tue May 25 05:54:44 2021
+  
+  Run #5 completed at Tue May 25 05:54:45 2021
+  
+  Run #6 started at Tue May 25 05:54:45 2021
+  
+  Run #6 completed at Tue May 25 05:54:45 2021
+  
+  Run #7 started at Tue May 25 05:54:45 2021
+  
+  Run #7 completed at Tue May 25 05:54:46 2021
+  
+  Run #8 started at Tue May 25 05:54:46 2021
+  
+  Run #8 completed at Tue May 25 05:54:46 2021
+  
+  Run #9 started at Tue May 25 05:54:46 2021
+  
+  Run #9 completed at Tue May 25 05:54:47 2021
+  
+  Run #10 started at Tue May 25 05:54:47 2021
+  
+  Run #10 completed at Tue May 25 05:54:47 2021
+  
+  Run #11 started at Tue May 25 05:54:47 2021
+  
+  Run #11 completed at Tue May 25 05:54:48 2021
+  
+  Run #12 started at Tue May 25 05:54:48 2021
+  
+  Run #12 completed at Tue May 25 05:54:49 2021
+  
+  Run #13 started at Tue May 25 05:54:49 2021
+  
+  Run #13 completed at Tue May 25 05:54:49 2021
+  
+  Run #14 started at Tue May 25 05:54:49 2021
+  
+  Run #14 completed at Tue May 25 05:54:50 2021
+  
+  Run #15 started at Tue May 25 05:54:50 2021
+  
+  Run #15 completed at Tue May 25 05:54:50 2021
+  
+  Run #16 started at Tue May 25 05:54:50 2021
+  
+  Run #16 completed at Tue May 25 05:54:51 2021
+  
+  Run #17 started at Tue May 25 05:54:51 2021
+  
+  Run #17 completed at Tue May 25 05:54:51 2021
+  
+  Run #18 started at Tue May 25 05:54:51 2021
+  
+  Run #18 completed at Tue May 25 05:54:52 2021
+  
+  Run #19 started at Tue May 25 05:54:52 2021
+  
+  Run #19 completed at Tue May 25 05:54:52 2021
+  
+  Run #20 started at Tue May 25 05:54:52 2021
+  
+  Run #20 completed at Tue May 25 05:54:53 2021
+  
+  Saving primer pairs from the final Pareto Front in out.primers
+  Saving scores of the primer pairs in out.scores
+  
+  where ``/path/to/data`` is the local path of your data.
 
-where ``/path/to/data`` is the local path of your data.
+The first input, ``reference_set.fasta`` is the output of the **Prepare input reference file** tool, while the `` mopo16s_initial_primer_pairs_file.fa`` is the reference prime paire described in the previous sections.
+
+Both the inputs have to be moved in the local ``/path/to/the/data`` directory.
