@@ -22,6 +22,8 @@ To run the container:
 
 #. We strongly suggest to mount an external directory in the docker container with the ``-v`` option, as in the example: ``-v /export/galaxy_storage/:/export``, where ``/export/galaxy_storage/`` is the local storage and ``/export`` is the mountpoint inside the docker container.
 
+#. ITSoneWB will be available on ``<IP ADREESS>:8080``.
+
 .. note::
 
    The docker container has been tested on Ubuntu 20.04 and Centos 7.
