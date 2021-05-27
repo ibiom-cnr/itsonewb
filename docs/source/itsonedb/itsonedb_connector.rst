@@ -79,7 +79,7 @@ The ITSoneDB Connector tool shipped with the Docker version of the Workbench req
 
 .. warning::
 
-   This version of the ITSoneDB Connector is intended for personal use only. For security reason these information are not public, but the access can be requested at the followinf mail address ``<mail_placeholder>``.
+   This version of the ITSoneDB Connector is intended for personal use only. For security reason these information are not public, but the access can be requested by `mail <mailto:itsonewb_support@ibiom.cnr.it>`_.
 
 Install on Galaxy
 -----------------
@@ -105,3 +105,7 @@ To install the ITSoneDB Connector on Galaxy:
 #. Add the search drop down menu as ``.loc`` files. To include them in Galaxy, please refer to the `Galaxy Project documentation <https://galaxyproject.org/admin/tools/data-tables/>`_. The ``*loc`` files are on our github repository (``itsonedb_wrapper/tool-data``) with the corresponding ``tool_data_table_conf.xml`` entry.
 
 #. Finally restart Galaxy.
+
+.. warning::
+
+   For security reasons this tool is provided only as Galaxy tool. Docker version and APIs are also available for privaate usage. Please contact us by `mail <mailto:itsonewb_support@ibiom.cnr.it>`_.
