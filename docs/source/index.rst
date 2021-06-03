@@ -10,6 +10,10 @@ The amplicon-based metagenomic analysis (i.e. DNA metabarcoding), represents a p
 
 In this context, ITSoneWB (ITSone WorkBench) represents a well-defined environment collecting and integrating the high quality ITS1 reference collection in ITSoneDB (Santamaria et al., 2017) with DNA metabarcoding well-established analysis pipelines and new tools in an easy-to-use service addressing the eukaryotic domain of life. Specifically, BioMaS, QIIME (Caporaso *et al.*, 2010), QIIME2 (Bolyen *et al.*, 2019) Mothur (Schloss *et al.*, 2009) pipelines were included and new tools to infer the ITS1 *Barcoding gap and PCR primers pair* in a user defined taxonomic range and to identify ITS1 regions in shotgun metagenomic data were designed, developed and deployed in a Galaxy environment.
 
+.. note::
+
+   For any issue related to ITSoneWB please contact us by `mail <mailto:itsonewb_support@ibiom.cnr.it>`_.
+
 .. figure:: _static/img/itsonewb_home.png
    :scale: 20 %
    :align: center
